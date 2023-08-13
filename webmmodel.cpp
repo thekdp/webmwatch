@@ -13,7 +13,7 @@ int WebmModel::rowCount(const QModelIndex &parent) const
 int WebmModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return 4;
+    return 3;
 }
 
 QVariant WebmModel::data(const QModelIndex &index, int role) const
@@ -21,12 +21,10 @@ QVariant WebmModel::data(const QModelIndex &index, int role) const
     if (role == Qt::DisplayRole) {
         switch (index.column()) {
         case 0:
-            return QVariant();
-        case 1:
             return contents.at(index.row()).fullname;
-        case 2:
+        case 1:
             return contents.at(index.row()).type;
-        case 3:
+        case 2:
         {
             quint16 minutes = contents.at(index.row()).durationSec / 60;
             quint16 seconds = contents.at(index.row()).durationSec % 60;
@@ -46,12 +44,10 @@ QVariant WebmModel::headerData(int section, Qt::Orientation orientation, int rol
         if (orientation == Qt::Horizontal) {
             switch (section) {
             case 0:
-                return QVariant();
-            case 1:
                 return tr("Name");
-            case 2:
+            case 1:
                 return tr("Type");
-            case 3:
+            case 2:
                 return tr("Duration");
             }
         } else if (orientation == Qt::Vertical) {

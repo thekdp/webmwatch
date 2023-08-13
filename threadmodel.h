@@ -1,25 +1,22 @@
-#ifndef WEBMMODEL_H
-#define WEBMMODEL_H
+#ifndef THREADMODEL_H
+#define THREADMODEL_H
 
 #include <QAbstractTableModel>
-#include <webmwatchwidget.h>
-#include "content.h"
+#include "thread.h"
 
-class WebmModel : public QAbstractTableModel
+class ThreadModel : public QAbstractTableModel
 {
 public:
-    WebmModel(QObject *parent = nullptr);
+    ThreadModel(QObject *parent = nullptr);
 
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     virtual int columnCount(const QModelIndex &parent) const override;
     virtual QVariant data(const QModelIndex &index, int role) const override;
     virtual QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
-    void applyContents(QList<Content> _contents) {contents = _contents;}
-
+    void applyThreads(QList<Thread> _threads) {threads = _threads;}
 
 private:
-
-    QList<Content> contents;
+    QList<Thread> threads;
 };
 
-#endif // WEBMMODEL_H
+#endif // THREADMODEL_H

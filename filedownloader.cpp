@@ -13,7 +13,7 @@ FileDownloader::~FileDownloader() { }
 
 void FileDownloader::fileDownloaded(QNetworkReply* reply) {
 
-    qDebug() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
+    qDebug() << "Request result" << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
 
     byteArray = reply->readAll();
     reply->deleteLater();

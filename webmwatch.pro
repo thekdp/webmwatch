@@ -10,15 +10,25 @@ CONFIG += c++11
 
 SOURCES += \
     filedownloader.cpp \
+    jsonparser.cpp \
     main.cpp \
+    proxymodel.cpp \
+    threadmodel.cpp \
     webmmodel.cpp \
-    widget.cpp
+    webmtableview.cpp \
+    webmwatchwidget.cpp
 
 HEADERS += \
+    board.h \
     content.h \
     filedownloader.h \
+    jsonparser.h \
+    proxymodel.h \
+    thread.h \
+    threadmodel.h \
     webmmodel.h \
-    widget.h
+    webmtableview.h \
+    webmwatchwidget.h
 
 RESOURCES += res.qrc
 
